@@ -44,31 +44,6 @@
         <maven.compiler.target>26</maven.compiler.target>
     </properties>
 
-    <dependencies>
-        <!--lombok-->
-        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.36</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
 
-    <build>
-        <!--apache tomcat manuel deployment için-->
-        <defaultGoal>spring-boot:run</defaultGoal>
-        <finalName>${project.artifactId}</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.13.0</version>
-                <configuration>
-                    <source>26</source>
-                    <target>26</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+
 </project>
