@@ -3,3 +3,5 @@ Clone row               --> Ctrl + d
 rename                  --> Shift +F6
 cleaner  package name   --> Ctrl+Alt+O
 Beautify                --> Ctrl+Alt+L
+Single Comment          -->  Ctrl+/
+Multiple Comment        -->  Shift+Ctrl+/
