@@ -1,0 +1,5 @@
+BookMarks               --> F11
+Clone row               --> Ctrl + d
+rename                  --> Shift +F6
+cleaner  package name   --> Ctrl+Alt+O
+Beautify                --> Ctrl+Alt+L
