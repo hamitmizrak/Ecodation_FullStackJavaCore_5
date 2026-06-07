@@ -1,6 +1,6 @@
 package com.hamitmizrak;
 
-public class _07_Conditional {
+public class _09_2_StringBuilder {
 
     // User
    static void main() {
