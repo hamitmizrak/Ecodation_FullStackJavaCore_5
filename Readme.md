@@ -1,4 +1,4 @@
-# IBB Ecodation Java Core
+# Ecodation Java Core FullStack-5
 [GitHub](https://github.com/hamitmizrak/Ecodation_FullStackJavaCore_5.git)
 [JDK](https://www.oracle.com/tr/java/technologies/downloads/#jdk23-windows)
 [Intellij Idea Community](https://www.jetbrains.com/idea/download/?section=windows)
