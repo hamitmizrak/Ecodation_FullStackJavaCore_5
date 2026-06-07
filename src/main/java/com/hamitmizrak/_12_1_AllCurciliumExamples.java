@@ -1,9 +1,10 @@
 package com.hamitmizrak;
 
-public class _09_1_String {
+public class _12_1_AllCurciliumExamples {
 
-    // String
+    // User
    static void main() {
        // Scanner
+
    }
 }
