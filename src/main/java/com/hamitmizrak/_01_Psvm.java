@@ -1,5 +1,6 @@
 package com.hamitmizrak;
 
+// Bookmarks :
 public class _01_Psvm {
 
     // psvm
@@ -7,5 +8,5 @@ public class _01_Psvm {
 
        // sout
        System.out.println("Merhabalar Ben Hamit Mızrak");
-    }
+   }
 }
