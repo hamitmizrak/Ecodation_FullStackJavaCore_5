@@ -89,3 +89,31 @@ null değeri ne zaman kullanabilirim ?
 ## 13.Ders Ödevi (4 Mart )
 > String name=""      name==null,  name.isEmpety()  name.isBlank() bunlar arasındaki farklar
 > Predicate nedir ?
+> 
+--------------------------------------
+
+Ödev - 16 Mayıs:
+aria-labelledby yapısı nedir?
+div > pattern="[0-9s()+-]{10,18}" yapısı nedir?
+width: min(900px, 92%); > yapısı nedir?
+grid-template-columns: 1fr 1fr; > yapısı nedir?
+
+Ödev - 17 Mayıs:
+Register kısmı tamamlanacak (bootstrap.html)
+CV websitesi geliştirilecek (yeni)
+JavaScript araştırma (syntax, yapılar, operators..) >> w3school üzerinden
+
+Ödev - 23 Mayıs:
+React’in bir kütüphane olması durumunu araştır. Neden framework olarak değil kütüphane olarak adlandırılıyor?
+Novalidate yapısına çalış/araştır (week_3_javascript.html)
+
+Ödev - 24 Mayıs:
+interpreter(yorumlama) araştır
+23 mayıs ve 24 mayıs derslerini 2şer kere izle
+LIFO ve FIFO yapılarını araştır
+
+Ödev - 6 Haziran:
+Maven ile gradle nedir? Aralarındaki fark nedir?
+
+Ödev - 7 Haziran:
+• ⁃ For ile while aralarındaki fark nedir?
