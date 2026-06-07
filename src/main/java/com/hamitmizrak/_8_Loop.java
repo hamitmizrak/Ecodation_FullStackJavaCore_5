@@ -1,6 +1,6 @@
 package com.hamitmizrak;
 
-public class _07_1_String {
+public class _8_Loop {
 
     // User
    static void main() {

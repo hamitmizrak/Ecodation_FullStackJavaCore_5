@@ -1,6 +1,6 @@
 package com.hamitmizrak;
 
-public class _08_Method {
+public class _10_Method {
 
     // User
    static void main() {
