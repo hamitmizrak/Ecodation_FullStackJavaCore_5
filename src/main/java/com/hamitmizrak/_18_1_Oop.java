@@ -1,4 +1,4 @@
 package com.hamitmizrak;
 
-public class FileData {
+public class _18_1_Oop {
 }
