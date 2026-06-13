@@ -116,4 +116,5 @@ LIFO ve FIFO yapılarını araştır
 Maven ile gradle nedir? Aralarındaki fark nedir?
 
 Ödev - 7 Haziran:
-• ⁃ For ile while aralarındaki fark nedir?
+For ile while aralarındaki fark nedir?
+• ⁃ StringBuilder class ındaki 1. ve 3. yol arasındaki fark nedir? Algoritmik olarak incele ve yazılımsal olarak maliyeti nedir(zaman,para..)?
