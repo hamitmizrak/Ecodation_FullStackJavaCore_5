@@ -1,4 +1,4 @@
-package samepackage;
+package com.hamitmizrak.samepackage;
 
 public class SameClass {
     // Access Modifier

@@ -1,6 +1,7 @@
-package otherpackage;
+package com.hamitmizrak.otherpackage;
 
-import samepackage.SameClass;
+
+import com.hamitmizrak.samepackage.SameClass;
 
 public class SpecialClass extends SameClass {
 
