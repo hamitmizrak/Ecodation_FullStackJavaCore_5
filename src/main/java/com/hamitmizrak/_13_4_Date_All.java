@@ -3,7 +3,7 @@ package com.hamitmizrak;
 import java.util.Date;
 
 // Date 1900 (+-)
-public class _13_1_Date {
+public class _13_4_Date_All {
 
     static void main() {
         Date now= new Date();
