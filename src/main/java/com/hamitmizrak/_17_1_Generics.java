@@ -5,7 +5,15 @@ public class _17_1_Generics <T> {
     private T number;
 
     // Parametresiz Constructor
+    public _17_1_Generics() {
+    }
+
     // Parametreli Constructor
+    public _17_1_Generics(String name, T number) {
+        this.name = name;
+        this.number = number;
+    }
+
     // ToString()
     @Override
     public String toString() {
@@ -51,5 +59,7 @@ public class _17_1_Generics <T> {
         ornek.noGenericMethod("Generic olamayan method");
         ornek.genericMethod(454545.5252);
 
+        // primitive türlerin haricinden herşey objedir.
+        // %100 OOP diyemiyor (primitive)
     }
 }
