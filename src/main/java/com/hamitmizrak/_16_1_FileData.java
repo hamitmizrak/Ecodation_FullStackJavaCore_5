@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class _16_1_FileData {
 
     // Field
-    private static final String MY_PATH = "E:\\1_Kodlar\\Java Se\\Ecodation_FullStackJavaCore_5\\Ecodation_FullStackJavaCore_5\\src\\main\\java\\com\\hamitmizrak\\file.txt";
+    private static final String MY_PATH = "./file.txt";
 
     // parametresiz constructor
     public _16_1_FileData() throws IOException {
