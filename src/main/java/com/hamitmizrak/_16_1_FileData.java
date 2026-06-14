@@ -89,5 +89,15 @@ public class _16_1_FileData {
     }
 
     //
+    private static void allResultData() throws IOException{
+        while(true){
+            validationAllData();
+        }
+    } //end allResultData
 
-}
+    // psvm
+    static void main() throws IOException {
+        allResultData();
+    }
+
+} //end _16_1_FileData
