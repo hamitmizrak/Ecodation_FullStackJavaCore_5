@@ -1,170 +1,67 @@
 package com.hamitmizrak;
 
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
-import java.io.IOException;
-
-/*
-Ders türleri, derse geçme, valdiaiton, array, file,exception
-*/
 public class _16_1_FileData {
 
-    // Ders türleri
-    enum CourseType {
-        JAVA, SPRING_BOOT, REACT, DATABASE
-    }
+    private static final String MY_PATH = "E:\\1_Kodlar\\Java Se\\Ecodation_FullStackJavaCore_5\\Ecodation_FullStackJavaCore_5\\src\\main\\java\\com\\hamitmizrak\\file.txt";
 
-    // Öğrenci Geçti,Kaldı
-    enum StudentStatus {
-        PASSED, FAILED
-    }
-
-    // Custome Exception
-    // inner class
-    static class StudentValidationException extends Exception {
-        public StudentValidationException(String message) {
-            super(message);
+    // FileCreate
+    private static void myFileICreate() throws IOException {
+        File file = new File(MY_PATH);
+        if (!file.exists()) {
+            file.createNewFile();
+            System.out.println(MY_PATH + " dosya oluşturuldu");
+        } else {
+            System.out.println(MY_PATH + " zaten böyle bir dosya var");
         }
     }
 
-    // Student
-    @Getter
-    @Setter
-    @NoArgsConstructor
-    @ToString
-    static class Student {
+    // Date
+    private static String logDate() {
+        Locale locale = new Locale("tr", "TR");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MMMM/yyyy HH:mm:ss zzzz", locale);
+        Date date = new Date();
+        return simpleDateFormat.format(date).toString();
+    }
 
-        // Field
-        private String name;
-        private String surname;
-        private String emailAddress;
-        private int score;
-        private CourseType courseType;
-        private StudentStatus status;
-
-        // parametreli constructor
-        public Student(String name, String surname, String emailAddress, int score, CourseType courseType) {
-            this.name = name;
-            this.surname = surname;
-            this.emailAddress = emailAddress;
-            this.score = score;
-            this.courseType = courseType;
+    // Writer
+    private static void logAddWithWriter(String data,boolean isClear) {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(MY_PATH, isClear))) {
+            String nowDate = "[" + logDate() + "] ";
+            String value = nowDate + data + "\n";
+            bufferedWriter.write(value);
+            bufferedWriter.flush();
+        } catch (Exception exp) {
+            exp.printStackTrace();
         }
+    }
 
-        // Validation
-        private static void validateEmailAddress(String emailAddress) throws StudentValidationException {
-            if (emailAddress == null) {
-                throw new StudentValidationException("Öğrenci mail adresi null olamaz");
-            }
-            if (emailAddress.trim().isEmpty()) {
-                throw new StudentValidationException("Öğrenci mail adresi boş olamaz");
-            }
-
-            if (emailAddress.length() < 2) {
-                throw new StudentValidationException("Öğrenci mail adresi en az 2 karakter olmalı");
-            }
-        } //end validateSurname
-
-        private static void validateScore(int score) throws StudentValidationException {
-            if (score < 0 || score > 100) {
-                throw new StudentValidationException("Öğrenci notu 0 ile 100 arasında olmalıdır.");
-            }
-        } //end validateScore
-
-        private static void validateCourseType(CourseType courseType) throws StudentValidationException {
-            if (courseType == null) {
-                throw new StudentValidationException("Ders türü boş olamaz.");
-            }
-        } //end validateCourseType
-
-        /// ///////////////////////////////////
-        /// Calculate
-        private static StudentStatus calculateStatus(int score) {
-            if (score >= 50)
-                return StudentStatus.PASSED;
-            else
-                return StudentStatus.FAILED;
-        } //end validateCourseType
-
-        // Format
-        public String toFileFormat() {
-            return name + ";" + surname + ";" + courseType + ";" + status;
+    // Reader
+    // Writer
+    private static String logReader() {
+        String rows; // Okunana satır
+        String builderToString="";
+        StringBuilder stringBuilder= new StringBuilder();
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(MY_PATH))) {
+           while ( (rows=bufferedReader.readLine())!=null ){
+               stringBuilder.append(rows).append("\n");
+           }
+            builderToString = stringBuilder.toString();
+            System.out.println(builderToString);
+        } catch (Exception exp) {
+            exp.printStackTrace();
         }
+        return builderToString;
+    }
 
-        //
-        public static Student fromFileLine(String line) throws StudentValidationException {
-            if (line == null || line.trim().isEmpty()) {
-                throw new StudentValidationException("Satır boş olamaz");
-            }
-
-            //  name;surname;emailAddress;not;ders;durum
-            String[] parts = line.split(";");
-            if(parts.length!=6){
-                throw new StudentValidationException("Satır formatı hatalı, Beklenen:name;surname;emailAddress;not;ders;durum ");
-            }
-
-            // String name, String surname, String emailAddress, int score, CourseType courseType
-            String name =parts[0].trim();
-            String surname =parts[1].trim();
-            String emailAddress =parts[2].trim();
-
-            // Score
-            int score=0;
-            try {
-                //int score = Integer.valueOf(parts[3]) ;
-                 score = Integer.parseInt(parts[3].trim()) ;
-            }catch (NumberFormatException numberFormatException){
-                throw new StudentValidationException("Not bilgisi sayısal olmalıdır ancak gelen değer:  "+parts[3]);
-            }
-
-            // CourseType
-            CourseType courseType1;
-            try {
-                courseType1 = CourseType.valueOf(parts[4].trim());
-            }catch (IllegalArgumentException illegalArgumentException){
-                throw new StudentValidationException("ders türü enum içinde bulunmalı gelen değer: "+parts[4]);
-            }
-
-            // Status
-            StudentStatus studentStatus;
-            try {
-                studentStatus = StudentStatus.valueOf(parts[5].trim());
-            }catch (IllegalArgumentException illegalArgumentException){
-                throw new StudentValidationException("öğrenci durumu türü enum içinde bulunmalı gelen değer: "+parts[5]);
-            }
-
-            // instance
-            // String name, String surname, String emailAddress, int score, CourseType courseType
-            Student student = new Student(name,surname,emailAddress,score,courseType1);
-
-            if(student.getStatus() !=studentStatus){
-                throw new StudentValidationException("Dosyadaki  durum ile hesaplanan durum uyuşmuyor Dosyadaki: "+ studentStatus+", Hesaplanan"+ student.getStatus());
-            }
-
-            return student;
-        }
-
-        // fileWriter
-        public static void dataFileWriter(String fileName, Student[] students) throws IOException{
-            if(fileName==null || fileName.trim().isEmpty()){
-                throw new IOException("Dosya adı boş olamaz");
-            }
-
-            if(students==null){
-                throw new IOException("Öğrenci array null  olamaz");
-            }
-
-
-
-
-        }
-
-
-        // fileReader
+    // All Data
+    private static void validationAllData() throws IOException{
 
     }
+
 }

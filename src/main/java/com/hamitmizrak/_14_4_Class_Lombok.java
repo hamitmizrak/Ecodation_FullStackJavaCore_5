@@ -1,12 +1,12 @@
 package com.hamitmizrak;
 
-import lombok.*;
+//import lombok.*;
 
-@Getter
+/*@Getter
 @Setter
 @ToString
 @NoArgsConstructor
-@AllArgsConstructor
+@AllArgsConstructor*/
 public class _14_4_Class_Lombok {
 
     // Field
@@ -19,7 +19,7 @@ public class _14_4_Class_Lombok {
     // Getter / Setter
 
     static void main() {
-        _14_4_Class_Lombok classBean = new _14_4_Class_Lombok("Hamit","Mızrak");
-        System.out.println(classBean);
+        //_14_4_Class_Lombok classBean = new _14_4_Class_Lombok("Hamit","Mızrak");
+        //System.out.println(classBean);
     }
 }
