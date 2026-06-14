@@ -9,10 +9,16 @@ import java.util.Scanner;
 
 public class _16_1_FileData {
 
+    // Field
     private static final String MY_PATH = "E:\\1_Kodlar\\Java Se\\Ecodation_FullStackJavaCore_5\\Ecodation_FullStackJavaCore_5\\src\\main\\java\\com\\hamitmizrak\\file.txt";
 
+    // parametresiz constructor
+    public _16_1_FileData() throws IOException {
+        myFileICreate();
+    }
+
     // FileCreate
-    private static void myFileICreate() throws IOException {
+    private  void myFileICreate() throws IOException {
         File file = new File(MY_PATH);
         if (!file.exists()) {
             file.createNewFile();
@@ -23,7 +29,7 @@ public class _16_1_FileData {
     }
 
     // Date
-    private static String logDate() {
+    private  String logDate() {
         Locale locale = new Locale("tr", "TR");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MMMM/yyyy HH:mm:ss zzzz", locale);
         Date date = new Date();
@@ -31,7 +37,7 @@ public class _16_1_FileData {
     }
 
     // Writer
-    private static void logAddWithWriter(String data,boolean isClear) {
+    private  void logAddWithWriter(String data,boolean isClear) {
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(MY_PATH, isClear))) {
             String nowDate = "[" + logDate() + "] ";
             String value = nowDate + data + "\n";
@@ -61,7 +67,7 @@ public class _16_1_FileData {
     }
 
     // All Data
-    private static void validationAllData() throws IOException{
+    private  void validationAllData() throws IOException{
         Scanner scanner = new Scanner(System.in);
         String allUserChooise ="\nLütfen Seçim yapınız".concat("\n1-)Dosya Oluştur").concat("\n2-)Dosyaya Yaz").concat("\n3-)Dosya Oku").concat("\n4-)Çıkış Yap");
         System.out.println(allUserChooise);
@@ -89,7 +95,7 @@ public class _16_1_FileData {
     }
 
     //
-    private static void allResultData() throws IOException{
+    private void allResultData() throws IOException{
         while(true){
             validationAllData();
         }
@@ -97,7 +103,8 @@ public class _16_1_FileData {
 
     // psvm
     static void main() throws IOException {
-        allResultData();
+        _16_1_FileData fileData= new _16_1_FileData();
+        fileData.allResultData();
     }
 
 } //end _16_1_FileData
