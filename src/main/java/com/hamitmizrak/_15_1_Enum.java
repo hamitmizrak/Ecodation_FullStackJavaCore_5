@@ -11,6 +11,5 @@ class TutorialsEnum {
         System.out.println(_15_1_Enum.SMALL);
         System.out.println(_15_1_Enum.MEDIUM);
         System.out.println(_15_1_Enum.LARGE);
-
     }
 }

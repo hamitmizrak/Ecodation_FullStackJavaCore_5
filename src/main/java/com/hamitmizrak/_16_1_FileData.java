@@ -5,6 +5,7 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Scanner;
 
 public class _16_1_FileData {
 
@@ -61,7 +62,32 @@ public class _16_1_FileData {
 
     // All Data
     private static void validationAllData() throws IOException{
-
+        Scanner scanner = new Scanner(System.in);
+        String allUserChooise ="\nLütfen Seçim yapınız".concat("\n1-)Dosya Oluştur").concat("\n2-)Dosyaya Yaz").concat("\n3-)Dosya Oku").concat("\n4-)Çıkış Yap");
+        System.out.println(allUserChooise);
+        int chooise = scanner.nextInt();
+        switch (chooise){
+            case 1:
+                myFileICreate();
+                break;
+            case 2:
+                Scanner scanner1 = new Scanner(System.in);
+                System.out.println("Birşey yazınız");
+                String data=scanner1.nextLine();
+                logAddWithWriter(data,true);
+                break;
+            case 3:
+                logReader();
+                break;
+            case 4:
+                System.out.println("Sistemden Çıkış yapılıyor");
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Lütfen Size verilen aralıkta seçim yapınız");
+        }
     }
+
+    //
 
 }

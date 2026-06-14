@@ -1,4 +1,4 @@
 package com.hamitmizrak;
 
-public class Thread {
+public class _19_1_Thread {
 }
