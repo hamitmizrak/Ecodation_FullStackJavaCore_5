@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.io.IOException;
+
 /*
 Ders türleri, derse geçme, valdiaiton, array, file,exception
 */
@@ -147,6 +149,21 @@ public class _16_1_FileData {
         }
 
         // fileWriter
+        public static void dataFileWriter(String fileName, Student[] students) throws IOException{
+            if(fileName==null || fileName.trim().isEmpty()){
+                throw new IOException("Dosya adı boş olamaz");
+            }
+
+            if(students==null){
+                throw new IOException("Öğrenci array null  olamaz");
+            }
+
+
+
+
+        }
+
+
         // fileReader
 
     }
