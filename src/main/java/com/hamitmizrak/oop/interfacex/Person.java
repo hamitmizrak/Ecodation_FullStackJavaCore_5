@@ -32,7 +32,7 @@ abstract public class Person {
     }
 
     // Gövdesiz MEthod
-    abstract public void create();
+    abstract public void noBodyMethod();
 
     // Getter and Setter
 
