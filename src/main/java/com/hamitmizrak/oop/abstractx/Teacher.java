@@ -2,7 +2,6 @@ package com.hamitmizrak.oop.abstractx;
 
 public class Teacher extends Person {
 
-
     // Field
 
     // Constructor
