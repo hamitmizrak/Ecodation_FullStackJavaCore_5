@@ -1,4 +1,4 @@
-package com.hamitmizrak.oop;
+package com.hamitmizrak;
 
 class _19_2_Thread_Implements implements Runnable {
 

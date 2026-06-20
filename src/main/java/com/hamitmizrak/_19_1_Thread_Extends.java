@@ -1,4 +1,4 @@
-package com.hamitmizrak.oop;
+package com.hamitmizrak;
 
 public class _19_1_Thread_Extends extends Thread{
 
