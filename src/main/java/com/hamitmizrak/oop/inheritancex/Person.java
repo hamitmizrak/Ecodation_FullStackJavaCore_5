@@ -4,6 +4,9 @@ import lombok.*;
 
 import java.util.Objects;
 
+
+// @Data = @Getter+@Setter+@ToString+@EqualsAndHashCode
+
 // Lombok
 @Getter
 @Setter
@@ -11,6 +14,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@EqualsAndHashCode
 public class Person {
 
     // Field
