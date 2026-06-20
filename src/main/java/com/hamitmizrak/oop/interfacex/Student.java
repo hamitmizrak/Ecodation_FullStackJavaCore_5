@@ -50,9 +50,9 @@ public class Student extends Person implements ICrud, Serializable {
 
     @Override
     public void delete() {
-
         System.out.println("Student delete");
-
     }
 }
+
+
 
