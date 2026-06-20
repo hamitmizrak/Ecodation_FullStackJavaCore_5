@@ -1,6 +1,4 @@
-package com.hamitmizrak.oop.inheritancex;
-
-import java.util.Objects;
+package com.hamitmizrak.oop.abstractx;
 
 public class Student extends Person {
 
@@ -8,10 +6,16 @@ public class Student extends Person {
 
     // Constructor
 
-
     // toString
     @Override
     public String toString() {
         return "Student{} " + super.toString();
     }
+
+    // Method
+    @Override
+    public void create() {
+        System.out.println("Student Create");
+    }
+
 }

@@ -1,13 +1,15 @@
-package com.hamitmizrak.oop.inheritancex;
+package com.hamitmizrak.oop.abstractx;
 
 
-public class MainInheritance {
+public class MainAbstract {
 
     // psvm
     public static void main(String[] args) {
 
         // Person
-        Person person = new Person();
+        //Person person = new Person();
+        //Person person = new Student();
+        Person person = new Teacher();  // polymorphism
         person.setId(1L);
         person.setName("Fatma");
         person.setSurname("Kalem");
@@ -22,6 +24,7 @@ public class MainInheritance {
         student.setSurname("Kalem");
         System.out.println(student);
         student.fullName();
+        student.create();
 
         // Teacher
         Teacher teacher = new Teacher();
@@ -30,5 +33,6 @@ public class MainInheritance {
         teacher.setSurname("Kursun kalem");
         System.out.println(teacher);
         teacher.fullName();
+        teacher.create();
     }
 }
