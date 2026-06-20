@@ -16,6 +16,7 @@ import java.io.Serializable;
 public class Student extends Person implements ICrud, Serializable {
 
     // Field
+    // Field
     private String number;
 
     // Constructor
@@ -23,6 +24,7 @@ public class Student extends Person implements ICrud, Serializable {
         super(id, name, surname); //üst class'dan gelen özellikler
         this.number = number;
     }
+
 
     // abstract Gövdesiz Methodun
     @Override
@@ -48,6 +50,9 @@ public class Student extends Person implements ICrud, Serializable {
 
     @Override
     public void delete() {
+
         System.out.println("Student delete");
+
     }
 }
+

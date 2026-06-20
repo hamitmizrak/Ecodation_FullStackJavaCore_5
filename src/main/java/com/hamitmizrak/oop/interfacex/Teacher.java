@@ -1,5 +1,6 @@
 package com.hamitmizrak.oop.interfacex;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +17,8 @@ import java.io.Serializable;
 public class Teacher  extends Person implements ICrud, Serializable {
 
     // Field
+
+    // Field
     private Double price;
 
     // Constructor
@@ -23,7 +26,6 @@ public class Teacher  extends Person implements ICrud, Serializable {
         super(id, name, surname);
         this.price = price;
     }
-
 
     // abstract Gövdesiz Methodun
     @Override
@@ -52,4 +54,5 @@ public class Teacher  extends Person implements ICrud, Serializable {
         System.out.println("Teacher delete");
     }
 
-} // end Teacher
+
+    }// end Teacher
